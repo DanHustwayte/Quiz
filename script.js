@@ -44,6 +44,7 @@ const quizData = [
 const quiz = document.getElementById('quiz');
 const submitBtn = document.getElementById('submit');
 const results = document.getElementById('results');
+const progressBar = document.getElementById('progress');
 
 let currentQuiz = 0;
 let score = 0;
@@ -69,6 +70,7 @@ function loadQuiz() {
             ${currentQuizData.d}
         </label>
     `;
+    updateProgressBar();
 }
 
 function getSelected() {
@@ -105,6 +107,11 @@ submitBtn.addEventListener('click', () => {
         }
     }
 });
+
+function updateProgressBar() {
+    const progress = (currentQuiz / quizData.length) * 100;
+    progressBar.style.width = `${progress}%`;
+}
 
 function getResultMessage(score) {
     if (score >= 12) {
