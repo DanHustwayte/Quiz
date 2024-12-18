@@ -44,7 +44,7 @@ const quizData = [
 const quiz = document.getElementById('quiz');
 const submitBtn = document.getElementById('submit');
 const results = document.getElementById('results');
-const progressBar = document.getElementById('progress');
+const progressBar = document.getElementById('progress-bar');
 
 let currentQuiz = 0;
 let score = 0;
@@ -98,20 +98,27 @@ submitBtn.addEventListener('click', () => {
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
-            results.innerHTML = `
-                <h2>${getResultMessage(score)}</h2>
+            document.body.innerHTML = `
+                <div class="result-container">
+                    <h2>${getResultMessage(score)}</h2>
+                </div>
             `;
-            results.style.fontSize = '2em';
-            results.style.color = '#111111';
-            quiz.innerHTML = '';
-            submitBtn.style.display = 'none';
+            document.body.style.display = 'flex';
+            document.body.style.justifyContent = 'center';
+            document.body.style.alignItems = 'center';
+            document.body.style.height = '100vh';
+            document.body.style.backgroundColor = '#03593b';
+            document.body.style.color = '#ffffff';
+            document.body.style.fontSize = '2em';
+            document.body.style.textAlign = 'center';
+            document.body.style.margin = '0';
         }
     }
 });
 
 function updateProgressBar() {
     const progress = (currentQuiz / quizData.length) * 100;
-    progressBar.style.width = `${progress}%`;
+    progressBar.firstElementChild.style.width = `${progress}%`;
 }
 
 function getResultMessage(score) {
