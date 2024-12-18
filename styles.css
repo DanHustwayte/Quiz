@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #03593b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,23 +9,80 @@ body {
 }
 
 .quiz-container {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 600px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.quiz-container:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #111111;
+}
+
+.quiz-question {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #111111;
+}
+
+label:hover {
+    color: #03593b;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
 }
 
 button {
-    background: #007BFF;
-    color: white;
+    background: #03593b;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #111111;
+}
+
+#results {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #111111;
+}
+
+#progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progress {
+    height: 10px;
+    background-color: #03593b;
+    width: 0;
+    transition: width 0.3s ease;
 }
