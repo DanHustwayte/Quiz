@@ -100,6 +100,7 @@ submitBtn.addEventListener('click', () => {
         } else {
             document.body.innerHTML = `
                 <div class="result-container">
+                    <h2>Your Organisational Style Is:</h2>
                     <h2>${getResultMessage(score)}</h2>
                 </div>
             `;
