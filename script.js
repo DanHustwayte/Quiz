@@ -99,9 +99,10 @@ submitBtn.addEventListener('click', () => {
             loadQuiz();
         } else {
             results.innerHTML = `
-                <h2>Your Score: ${score}</h2>
-                <p>${getResultMessage(score)}</p>
+                <h2>${getResultMessage(score)}</h2>
             `;
+            results.style.fontSize = '2em';
+            results.style.color = '#111111';
             quiz.innerHTML = '';
             submitBtn.style.display = 'none';
         }
